@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SampleEpoxyCarousel</string>
+
+    <string-array name="view_pager_items">
+        <item>Page 1</item>
+        <item>Page 2</item>
+        <item>Page 3</item>
+        <item>Page 4</item>
+    </string-array>
+</resources>
