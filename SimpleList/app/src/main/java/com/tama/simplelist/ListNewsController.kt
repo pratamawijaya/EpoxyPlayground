@@ -1,17 +1,21 @@
 package com.tama.simplelist
 
+import android.content.Context
 import com.airbnb.epoxy.TypedEpoxyController
-import com.tama.simplelist.models.News
-import com.tama.simplelist.viewholder.NewsItemModel_
+import com.tama.simplelist.domain.News
+import com.tama.simplelist.view.NewsItemView
+import com.tama.simplelist.view.newsItemView
 
-class ListNewsController : TypedEpoxyController<List<News>>() {
+class ListNewsController(val ctx: Context) : TypedEpoxyController<List<News>>() {
 
     override fun buildModels(news: List<News>) {
-
-        news.forEach {
-            NewsItemModel_()
-                .title(it.title)
-                .url(it.imgUrl)
+        news.map { newsData ->
+            newsItemView(ctx) {
+                id("")
+                model(
+                    NewsItemView.Model(id = "", title = newsData.title, imgUrl = newsData.imgUrl)
+                )
+            }
         }
     }
 

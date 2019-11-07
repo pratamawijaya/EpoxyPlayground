@@ -1,3 +1,3 @@
-package com.tama.simplelist.models
+package com.tama.simplelist.domain
 
 data class News(val title:String, val imgUrl:String)
